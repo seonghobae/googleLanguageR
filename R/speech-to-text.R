@@ -135,7 +135,7 @@ gl_speech <- function(audio_source,
     )
   } else {
     assert_that(is.readable(audio_source))
-    assert_that(file.size(audio_source) <= 10485760,
+    assert_that(file.size(audio_source) <= 10485760 && asynch == FALSE,
                 msg = paste0(
                   "Audio source size is too big > 10485760 bytes,",
                   " must split or reduce size"))
